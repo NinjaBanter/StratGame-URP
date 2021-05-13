@@ -47,7 +47,7 @@ public class SelectCharacter : MonoBehaviour
         }
     }
 
-
+    //testy
 
 
     public void AttackSquare(GameObject thePlayerAttack)
