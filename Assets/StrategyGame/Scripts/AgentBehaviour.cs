@@ -10,7 +10,7 @@ public class AgentBehaviour : MonoBehaviour
     public MapGenerator mapGen;
     public int movementRange = 3;
     //public int attackRange = 6;
-
+    public Weapon currentWeapon;
 
 
 

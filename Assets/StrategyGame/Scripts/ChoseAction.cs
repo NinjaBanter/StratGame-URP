@@ -17,6 +17,8 @@ public class ChoseAction : MonoBehaviour
 
     public GameObject currentMenu;
 
+    public Weapon currentWeapon;
+
     [SerializeField]
     public int rifleRange, grenadeRange;
 
@@ -100,12 +102,14 @@ public class ChoseAction : MonoBehaviour
     public void PrimaryAttack()
     {
         Debug.Log("Primary Attack Radius is" + weaponList[0].attackRadius);
+        theAgent.GetComponent<AgentBehaviour>().currentWeapon = weaponList[0];
         showAttackableSquares(weaponList[0].attackRadius);
     }
 
     public void SecondaryAttack()
     {
         Debug.Log("Secondary Attack Radius is" + weaponList[1].attackRadius);
+        theAgent.GetComponent<AgentBehaviour>().currentWeapon = weaponList[1];
         showAttackableSquares(weaponList[1].attackRadius);
     }
 
@@ -130,12 +134,16 @@ public class ChoseAction : MonoBehaviour
         }
     }
 
-
+    /*
     public void SelectWeapon()
     {
+        AttackHandler atkHandler = gameManager.GetComponent<AttackHandler>();
+
         theAgent = tHandler.selectedCharacter;
+        Weapon theWeapon = theAgent.GetComponent<AgentBehaviour>().currentWeapo
 
     }
+    */
 
 
 }

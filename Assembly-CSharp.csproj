@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\StrategyGame\Scripts\AgentBehaviour.cs" />
+    <Compile Include="Assets\StrategyGame\Scripts\AttackHandler.cs" />
     <Compile Include="Assets\StrategyGame\Scripts\ChoseAction.cs" />
     <Compile Include="Assets\StrategyGame\Scripts\MapGenerator.cs" />
     <Compile Include="Assets\StrategyGame\Scripts\SelectCharacter.cs" />

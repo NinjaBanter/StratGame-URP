@@ -503,6 +503,7 @@ GameObject:
   - component: {fileID: 1476641689}
   - component: {fileID: 1476641691}
   - component: {fileID: 1476641690}
+  - component: {fileID: 1476641692}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -553,7 +554,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a66c7ea95d86a44b700f76c299061c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  mapGenerator: {fileID: 0}
   theAgent: {fileID: 0}
+--- !u!114 &1476641692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476641688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f07ff2a61e0f04c89927aa1d03a996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1514688335
 GameObject:
   m_ObjectHideFlags: 0
