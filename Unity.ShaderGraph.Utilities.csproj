@@ -64,10 +64,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@7.5.2\Editor\Utilities\AssemblyInfo.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@7.5.2\Editor\Utilities\EnumInfo.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@7.5.2\Editor\Utilities\StringBuilderExtensions.cs" />
-    <None Include="Library\PackageCache\com.unity.shadergraph@7.5.2\Editor\Utilities\Unity.ShaderGraph.Utilities.asmdef" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@7.5.3\Editor\Utilities\AssemblyInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@7.5.3\Editor\Utilities\EnumInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@7.5.3\Editor\Utilities\StringBuilderExtensions.cs" />
+    <None Include="Library\PackageCache\com.unity.shadergraph@7.5.3\Editor\Utilities\Unity.ShaderGraph.Utilities.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/UnityEditors/2019.4.19f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -264,7 +264,7 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.NRefactory">
-      <HintPath>C:/Users/ninja/Documents/Unity/StratGame/Strat1.0/Library/PackageCache/com.unity.render-pipelines.core@7.5.2/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+      <HintPath>C:/Users/ninja/Documents/Unity/StratGame/Strat1.0/Library/PackageCache/com.unity.render-pipelines.core@7.5.3/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>C:/Users/ninja/Documents/Unity/StratGame/Strat1.0/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
