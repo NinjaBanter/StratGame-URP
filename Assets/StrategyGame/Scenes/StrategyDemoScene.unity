@@ -569,6 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f07ff2a61e0f04c89927aa1d03a996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theTargetedSquares: []
 --- !u!1 &1514688335
 GameObject:
   m_ObjectHideFlags: 0

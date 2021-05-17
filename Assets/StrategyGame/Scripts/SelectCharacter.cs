@@ -59,14 +59,12 @@ public class SelectCharacter : MonoBehaviour
                         if(tHighlight.tileMode == 2)
                     {
                         GameObject theSelectedTile = hit.transform.gameObject;
-                        
+                        Weapon theCurrentWeapon = theAgent.GetComponent<AgentBehaviour>().currentWeapon;
                         
                         foreach(GameObject tile in mapGenerator.GetComponent<MapGenerator>().tilesGO)
                         {
-                            atkHandler.ShowBlastSquares(3, theSelectedTile, tile);
-                        }
-                       
-                        
+                            atkHandler.AssignAppropriateAttack(theCurrentWeapon, theSelectedTile, tile);
+                        }                        
                     }
                 }
             }

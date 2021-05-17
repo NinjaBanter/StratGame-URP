@@ -141,7 +141,7 @@ public class AgentBehaviour : MonoBehaviour
             int remainingRange = importRange + rangedifference;
             theRemainingRange = remainingRange;
 
-            Debug.Log("Z position is " + tvalue.tileZ + " and remaining movementRange is " + theRemainingRange);
+         //   Debug.Log("Z position is " + tvalue.tileZ + " and remaining movementRange is " + theRemainingRange);
 
             return theRemainingRange;
         }
@@ -151,7 +151,7 @@ public class AgentBehaviour : MonoBehaviour
             int remainingRange = importRange - rangedifference;
             theRemainingRange = remainingRange;
 
-            Debug.Log("Z position is " + tvalue.tileZ + " and remaining movementRange is " + theRemainingRange);
+        //    Debug.Log("Z position is " + tvalue.tileZ + " and remaining movementRange is " + theRemainingRange);
 
             return theRemainingRange;
         }
@@ -192,7 +192,7 @@ public class AgentBehaviour : MonoBehaviour
             int remainingRange = importRange + rangedifference;
             theRemainingRange = remainingRange;
 
-            Debug.Log("Z position is " + tvalue.tileZ + " and remaining movementRange is " + theRemainingRange);
+            //Debug.Log("Z position is " + tvalue.tileZ + " and remaining movementRange is " + theRemainingRange);
 
             return theRemainingRange;
         }
@@ -202,7 +202,7 @@ public class AgentBehaviour : MonoBehaviour
             int remainingRange = importRange - rangedifference;
             theRemainingRange = remainingRange;
 
-            Debug.Log("Z position is " + tvalue.tileZ + " and remaining movementRange is " + theRemainingRange);
+           // Debug.Log("Z position is " + tvalue.tileZ + " and remaining movementRange is " + theRemainingRange);
 
             return theRemainingRange;
         }
@@ -230,7 +230,7 @@ public class AgentBehaviour : MonoBehaviour
 
         foreach (GameObject i in mapGen.tilesGO)
         {
-            Debug.Log("ShowAttackableTiles Check");
+         //   Debug.Log("ShowAttackableTiles Check");
             CanAttack(i, attackRange);
         }
     }
@@ -239,7 +239,7 @@ public class AgentBehaviour : MonoBehaviour
     {
         foreach (GameObject tile in selectableSquares)
         {
-            Debug.Log("Deselecting a tile");
+       //     Debug.Log("Deselecting a tile");
             TileHighlight tHighlight = tile.GetComponent<TileHighlight>();
             tHighlight.tileMode = 0; // Setting mode to deselected
             tile.GetComponent<Renderer>().material.color = Color.white;

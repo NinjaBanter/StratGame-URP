@@ -5,6 +5,10 @@ using UnityEngine;
 public class AttackHandler : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public List<GameObject> theTargetedSquares = new List<GameObject>();
+
+
     void Start()
     {
         
@@ -22,6 +26,20 @@ public class AttackHandler : MonoBehaviour
     }
 
 
+    public void ShowSingleTile(GameObject theOriginTile, GameObject theTargetedTile)
+    {
+        TileValue originPosition = theOriginTile.GetComponent<TileValue>();
+        TileValue tValue = theTargetedTile.GetComponent<TileValue>();
+
+        if(originPosition.tileX == tValue.tileX && originPosition.tileZ == tValue.tileZ)
+        {
+            TargetTile(theTargetedTile);
+        }
+    }
+
+
+
+
     public void ShowBlastSquares(int range, GameObject theOriginTile, GameObject theTargetedTile)
     {
         int remRange = CheckBlastX(range, theOriginTile, theTargetedTile);
@@ -30,21 +48,10 @@ public class AttackHandler : MonoBehaviour
 
         if (finalRange >= 0)
         {
-            //selectedTile.GetComponent<MeshRenderer>().material = selectedMaterial;
-            theTargetedTile.GetComponent<Renderer>().material.color = Color.green;
-
-            //selectableSquares.Add(selectedTile);
-            //selectedTile.GetComponent<TileHighlight>().tileMode = 1;
+            TargetTile(theTargetedTile);
         }
     }
 
-    public void ShowCrossSquares(int range, GameObject theOriginTile, GameObject theTargetedTile)
-    {
-        TileValue originValue = theOriginTile.GetComponent<TileValue>();
-        TileValue TargetedTileValue = theTargetedTile.GetComponent<TileValue>();
-
-        if(TargetedTileValue.tileX   originValue.tileX) //Put in code to make a cross
-    }
 
     private int CheckBlastX(int range, GameObject theOriginTile, GameObject theTargetedTile)
     {
@@ -67,6 +74,7 @@ public class AttackHandler : MonoBehaviour
             theRemainingRange = remainingRange;
             return theRemainingRange;
         }
+    
     }
 
     private int CheckBlastZ(int range, GameObject theOriginTile, GameObject theTargetedTile)
@@ -85,10 +93,59 @@ public class AttackHandler : MonoBehaviour
         }
         else
         {
-            int rangedifference = positionZ - tvalue.tileX;
+            int rangedifference = positionZ - tvalue.tileZ;
             int remainingRange = range - rangedifference;
             theRemainingRange = remainingRange;
             return theRemainingRange;
         }
     }
+
+
+    public void ShowCrossSquares(int range, GameObject theOriginTile, GameObject theTargetedTile)
+    {
+        TileValue originPosition = theOriginTile.GetComponent<TileValue>();
+        TileValue tValue = theTargetedTile.GetComponent<TileValue>();
+
+        if(tValue.tileX <= originPosition.tileX + range && tValue.tileX >= originPosition.tileX - range && tValue.tileZ == originPosition.tileZ)
+        {
+            TargetTile(theTargetedTile);
+        }
+
+        if (tValue.tileZ <= originPosition.tileZ + range && tValue.tileZ >= originPosition.tileZ - range && tValue.tileX == originPosition.tileX)
+        {
+            TargetTile(theTargetedTile);
+        }
+    }
+
+
+
+    public void AssignAppropriateAttack(Weapon theCurrentWeapon, GameObject theOriginTile, GameObject theTargetedTile)
+    {
+        if(theCurrentWeapon.attackType == 1)
+        {
+            ShowSingleTile(theOriginTile, theTargetedTile);
+        }
+        else
+        if (theCurrentWeapon.attackType == 2)
+        {
+            ShowBlastSquares(theCurrentWeapon.damageRadius, theOriginTile, theTargetedTile);
+        }
+        else
+        if (theCurrentWeapon.attackType == 3)
+        {
+            ShowCrossSquares(theCurrentWeapon.damageRadius, theOriginTile, theTargetedTile);
+        }
+    }
+
+
+    public void TargetTile(GameObject theTargetedTile)
+    {
+        //selectedTile.GetComponent<MeshRenderer>().material = selectedMaterial;
+        theTargetedTile.GetComponent<Renderer>().material.color = Color.green;
+        theTargetedSquares.Add(theTargetedTile);
+        theTargetedTile.GetComponent<TileHighlight>().tileMode = 3;
+    }
+
+    
+
 }

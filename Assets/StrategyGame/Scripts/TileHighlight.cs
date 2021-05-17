@@ -35,7 +35,7 @@ public class TileHighlight : MonoBehaviour
         else
             if (tileMode == 1 || tileMode == 2)
         {
-            this.GetComponent<Renderer>().material.color = Color.green;
+            this.GetComponent<Renderer>().material.color = Color.yellow;
         }
     }
 

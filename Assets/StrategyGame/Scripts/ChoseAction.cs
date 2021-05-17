@@ -9,7 +9,7 @@ public class ChoseAction : MonoBehaviour
     public GameObject theAgent;
     public TurnHandler tHandler;
     public GameObject gameManager;
-    public GameObject baseBtns;
+    public GameObject baseBtns, confirmBtns;
 
     public GameObject primaryWeaponBtn, secondaryWeaponBtn;
 
@@ -85,6 +85,7 @@ public class ChoseAction : MonoBehaviour
         ResetTiles();
         OrderWeapons();
         weaponsMenu.SetActive(true);
+        confirmBtns.SetActive(false);
         currentMenu.SetActive(false);
         currentMenu = weaponsMenu;
     }
@@ -92,23 +93,30 @@ public class ChoseAction : MonoBehaviour
     public void ShowBaseMenu()
     {
         ResetTiles();
-
         baseBtns.SetActive(true);
         currentMenu.SetActive(false);
-
+        confirmBtns.SetActive(false);
         currentMenu = baseBtns;
     }
 
+    public void ShowConfirmAttackMenu()
+    {
+        confirmBtns.SetActive(true);
+        currentMenu.SetActive(false);
+        currentMenu = confirmBtns;
+    }
+
+
     public void PrimaryAttack()
     {
-        Debug.Log("Primary Attack Radius is" + weaponList[0].attackRadius);
+ //       Debug.Log("Primary Attack Radius is" + weaponList[0].attackRadius);
         theAgent.GetComponent<AgentBehaviour>().currentWeapon = weaponList[0];
         showAttackableSquares(weaponList[0].attackRadius);
     }
 
     public void SecondaryAttack()
     {
-        Debug.Log("Secondary Attack Radius is" + weaponList[1].attackRadius);
+      //  Debug.Log("Secondary Attack Radius is" + weaponList[1].attackRadius);
         theAgent.GetComponent<AgentBehaviour>().currentWeapon = weaponList[1];
         showAttackableSquares(weaponList[1].attackRadius);
     }
@@ -121,9 +129,9 @@ public class ChoseAction : MonoBehaviour
             weaponList.Add(weaponScript);
         }
         primaryWeaponBtnTxt.text = weaponList[0].weaponName;
-        Debug.Log("primaryWeaponBtn weapon btn .txt is " + primaryWeaponBtnTxt.text + " and the weapon name is " + weaponList[0].weaponName);
+    //    Debug.Log("primaryWeaponBtn weapon btn .txt is " + primaryWeaponBtnTxt.text + " and the weapon name is " + weaponList[0].weaponName);
         secondaryWeaponBtnTxt.text = weaponList[1].weaponName;
-        Debug.Log("primaryWeaponBtn weapon btn .txt is " + secondaryWeaponBtnTxt.text + " and the weapon name is " + weaponList[1].weaponName);
+    //    Debug.Log("primaryWeaponBtn weapon btn .txt is " + secondaryWeaponBtnTxt.text + " and the weapon name is " + weaponList[1].weaponName);
     }
 
     public void ClearCurrentWeapons()
@@ -145,5 +153,8 @@ public class ChoseAction : MonoBehaviour
     }
     */
 
+    public void ConfirmAttack()
+    {
 
+    }
 }
